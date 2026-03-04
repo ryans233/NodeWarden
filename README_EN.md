@@ -30,7 +30,7 @@
 | Folders / Favorites | ✅ | ✅ | Common vault organization supported |
 | Full sync `/api/sync` | ✅ | ✅ | Compatibility and performance optimized |
 | Attachment upload/download | ✅ | ✅ | Backed by Cloudflare R2 |
-| Import flow (common clients) | ✅ | ✅ | Common import paths covered |
+| Import / export (common clients) | ✅ | ✅ | Common import and export paths covered |
 | Website icon proxy | ✅ | ✅ | Via `/icons/{hostname}/icon.png` |
 | passkey、TOTP fields | ❌ | ✅ | Official service requires premium; NodeWarden does not |
 | Multi-user | ✅ | ✅ | Full user management with invitation mechanism |
@@ -41,7 +41,6 @@
 | Emergency access | ✅ | ❌ | Not necessary to implement |
 | Admin console / Billing & subscription | ✅ | ❌ | Free only |
 | Full push notification pipeline | ✅ | ❌ | Not necessary to implement |
-
 
 ## Tested clients / platforms
 
@@ -110,6 +109,10 @@ npm run dev
 
 **Q: How do I back up my data?**  
 A: Use **Export vault** in your client and save the JSON file.
+
+**Q: Which import/export formats are supported?**  
+A: NodeWarden supports Bitwarden `json/csv/vault + attachments zip` and NodeWarden `vault + attachments json` in both plain and encrypted modes, and every format visible in the import selector is directly importable.  
+A: It also supports direct import of Bitwarden `vault + attachments zip`, which is not directly supported by official Bitwarden Web import.
 
 **Q: What if I forget the master password?**  
 A: It can’t be recovered (end-to-end encryption). Keep it safe.
